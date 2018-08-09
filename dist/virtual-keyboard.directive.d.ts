@@ -22,17 +22,17 @@ export declare class NgVirtualKeyboardDirective {
     /**
      * Method to open virtual keyboard
      */
-    private openKeyboard();
+    private openKeyboard;
     /**
      * Getter for used keyboard layout.
      *
      * @returns {KeyboardLayout}
      */
-    private getLayout();
+    private getLayout;
     /**
      * Getter for used placeholder for virtual keyboard input field.
      *
      * @returns {string}
      */
-    private getPlaceHolder();
+    private getPlaceHolder;
 }

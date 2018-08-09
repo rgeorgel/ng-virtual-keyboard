@@ -75,8 +75,11 @@ export class AppComponent {
   ];
 
   public customLayout = [
-    ['a', 'b:2', 'Backspace:3'],
-    ['c:1.33', 'd:1.67', 'Shift:3'],
+    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Backspace:2'],
+    ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'CapsLock:2'],
+    ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'Spacer', 'Shift:2'],
+    ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '-', '_', '+'],
+    ['@', 'SpaceBar:7', '#', 'com:2', 'br'],
   ];
 
   public invalid = false;

@@ -288,6 +288,12 @@ export class VirtualKeyboardComponent implements OnInit, OnDestroy {
       case 'SpaceBar':
         this.handleNormalKey(' ');
         break;
+      case 'com':
+        this.handleNormalKey('.com');
+        break;
+      case 'br':
+        this.handleNormalKey('.br');
+        break;
     }
   }
 

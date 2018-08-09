@@ -21,7 +21,7 @@ export declare class VirtualKeyboardComponent implements OnInit, OnDestroy {
      * @param {number}                                start
      * @param {number}                                end
      */
-    private static setSelectionRange(input, start, end);
+    private static setSelectionRange;
     /**
      * Constructor of the class.
      *
@@ -67,13 +67,13 @@ export declare class VirtualKeyboardComponent implements OnInit, OnDestroy {
     /**
      * Method to check is virtual keyboard input is disabled.
      */
-    private checkDisabled();
+    private checkDisabled;
     /**
      * Method to handle "normal" key press event, this will add specified character to input value.
      *
      * @param {string}  keyValue
      */
-    private handleNormalKey(keyValue);
+    private handleNormalKey;
     /**
      * Method to handle "Special" key press events.
      *  1) Enter
@@ -83,7 +83,7 @@ export declare class VirtualKeyboardComponent implements OnInit, OnDestroy {
      *  6) Shift, toggle current layout state
      *  5) SpaceBar
      */
-    private handleSpecialKey(event);
+    private handleSpecialKey;
     /**
      * Method to dispatch necessary keyboard events to current input element.
      *
@@ -91,5 +91,5 @@ export declare class VirtualKeyboardComponent implements OnInit, OnDestroy {
      *
      * @param {KeyPressInterface} event
      */
-    private dispatchEvents(event);
+    private dispatchEvents;
 }

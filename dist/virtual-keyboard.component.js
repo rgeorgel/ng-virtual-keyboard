@@ -1,13 +1,4 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var material_1 = require("@angular/material");
@@ -25,7 +16,6 @@ var VirtualKeyboardComponent = /** @class */ (function () {
         this.virtualKeyboardService = virtualKeyboardService;
         this.shift = false;
     }
-    VirtualKeyboardComponent_1 = VirtualKeyboardComponent;
     /**
      * Helper method to set cursor in input to correct place.
      *
@@ -69,7 +59,7 @@ var VirtualKeyboardComponent = /** @class */ (function () {
         this.virtualKeyboardService.caretPosition$.subscribe(function (caretPosition) {
             _this.caretPosition = caretPosition;
             setTimeout(function () {
-                VirtualKeyboardComponent_1.setSelectionRange(_this.keyboardInput.nativeElement, caretPosition, caretPosition);
+                VirtualKeyboardComponent.setSelectionRange(_this.keyboardInput.nativeElement, caretPosition, caretPosition);
             }, 0);
         });
         if (this.inputElement.nativeElement.value.length) {
@@ -198,6 +188,12 @@ var VirtualKeyboardComponent = /** @class */ (function () {
             case 'SpaceBar':
                 this.handleNormalKey(' ');
                 break;
+            case 'com':
+                this.handleNormalKey('.com');
+                break;
+            case 'br':
+                this.handleNormalKey('.br');
+                break;
         }
     };
     /**
@@ -224,21 +220,22 @@ var VirtualKeyboardComponent = /** @class */ (function () {
         // And set focus to input
         this.keyboardInput.nativeElement.focus();
     };
-    __decorate([
-        core_1.ViewChild('keyboardInput'),
-        __metadata("design:type", core_1.ElementRef)
-    ], VirtualKeyboardComponent.prototype, "keyboardInput", void 0);
-    VirtualKeyboardComponent = VirtualKeyboardComponent_1 = __decorate([
-        core_1.Component({
-            selector: 'virtual-keyboard',
-            template: "\n    <div class=\"container\">\n      <div fxLayout=\"column\">\n        <mat-input-container>\n          <button class=\"close\" color=\"primary\" mat-mini-fab\n            (click)=\"close()\"\n          >\n            <mat-icon>check</mat-icon>\n          </button>\n    \n          <input type=\"text\"\n            matInput\n            #keyboardInput\n            (click)=\"updateCaretPosition()\"\n            [(ngModel)]=\"inputElement.nativeElement.value\" placeholder=\"{{ placeholder }}\"\n            [maxLength]=\"maxLength\"\n          />\n        </mat-input-container>\n    \n        <div fxLayout=\"row\" fxLayoutAlign=\"center center\"\n          *ngFor=\"let row of layout; let rowIndex = index\"\n          [attr.data-index]=\"rowIndex\"\n        >\n          <virtual-keyboard-key\n            *ngFor=\"let key of row; let keyIndex = index\"\n            [key]=\"key\"\n            [disabled]=\"disabled\"\n            [attr.data-index]=\"keyIndex\"\n            (keyPress)=\"keyPress($event)\"\n          ></virtual-keyboard-key>\n        </div>\n      </div>\n    </div>\n  ",
-            styles: ["\n    .close {\n      position: relative;\n      float: right;\n      top: -16px;\n      right: 0;\n      margin-bottom: -40px;\n    }\n  \n    .mat-input-container {\n      margin: -16px 0;\n      font-size: 32px;\n    }\n  \n    .mat-input-element:disabled {\n      color: currentColor;\n    }\n\n    :host /deep/ .mat-input-placeholder {\n      top: 10px !important;\n      font-size: 24px !important;\n    }\n  "]
-        }),
-        __metadata("design:paramtypes", [material_1.MatDialogRef,
-            virtual_keyboard_service_1.VirtualKeyboardService])
-    ], VirtualKeyboardComponent);
+    VirtualKeyboardComponent.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'virtual-keyboard',
+                    template: "\n    <div class=\"container\">\n      <div fxLayout=\"column\">\n        <mat-input-container>\n          <button class=\"close\" color=\"primary\" mat-mini-fab\n            (click)=\"close()\"\n          >\n            <mat-icon>check</mat-icon>\n          </button>\n    \n          <input type=\"text\"\n            matInput\n            #keyboardInput\n            (click)=\"updateCaretPosition()\"\n            [(ngModel)]=\"inputElement.nativeElement.value\" placeholder=\"{{ placeholder }}\"\n            [maxLength]=\"maxLength\"\n          />\n        </mat-input-container>\n    \n        <div fxLayout=\"row\" fxLayoutAlign=\"center center\"\n          *ngFor=\"let row of layout; let rowIndex = index\"\n          [attr.data-index]=\"rowIndex\"\n        >\n          <virtual-keyboard-key\n            *ngFor=\"let key of row; let keyIndex = index\"\n            [key]=\"key\"\n            [disabled]=\"disabled\"\n            [attr.data-index]=\"keyIndex\"\n            (keyPress)=\"keyPress($event)\"\n          ></virtual-keyboard-key>\n        </div>\n      </div>\n    </div>\n  ",
+                    styles: ["\n    .close {\n      position: relative;\n      float: right;\n      top: -16px;\n      right: 0;\n      margin-bottom: -40px;\n    }\n  \n    .mat-input-container {\n      margin: -16px 0;\n      font-size: 32px;\n    }\n  \n    .mat-input-element:disabled {\n      color: currentColor;\n    }\n\n    :host /deep/ .mat-input-placeholder {\n      top: 10px !important;\n      font-size: 24px !important;\n    }\n  "]
+                },] },
+    ];
+    /** @nocollapse */
+    VirtualKeyboardComponent.ctorParameters = function () { return [
+        { type: material_1.MatDialogRef, },
+        { type: virtual_keyboard_service_1.VirtualKeyboardService, },
+    ]; };
+    VirtualKeyboardComponent.propDecorators = {
+        'keyboardInput': [{ type: core_1.ViewChild, args: ['keyboardInput',] },],
+    };
     return VirtualKeyboardComponent;
-    var VirtualKeyboardComponent_1;
 }());
 exports.VirtualKeyboardComponent = VirtualKeyboardComponent;
 //# sourceMappingURL=virtual-keyboard.component.js.map

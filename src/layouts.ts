@@ -52,6 +52,8 @@ export const specialKeys: Array<string> = [
   'SpaceBar',
   'Spacer',
   'Shift',
+  'com',
+  'br',
 ];
 
 export const specialKeyIcons = {
@@ -63,7 +65,9 @@ export const specialKeyIcons = {
 };
 
 export const specialKeyTexts = {
-  CapsLock: 'Caps'
+  CapsLock: 'Caps',
+  com: '.com',
+  br: '.br',
 };
 
 export const notDisabledSpecialKeys = [
