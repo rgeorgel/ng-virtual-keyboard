@@ -14,7 +14,7 @@ import { KeyPressInterface } from './key-press.interface';
           <button class="close" color="primary" mat-mini-fab
             (click)="close()"
           >
-            <mat-icon>check</mat-icon>
+            <mat-icon>ok</mat-icon>
           </button>
     
           <input type="text"

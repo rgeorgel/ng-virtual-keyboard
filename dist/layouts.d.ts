@@ -17,6 +17,7 @@ export declare const specialKeyTexts: {
     CapsLock: string;
     com: string;
     br: string;
+    Shift: string;
 };
 export declare const notDisabledSpecialKeys: string[];
 /**

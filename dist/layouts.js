@@ -17,7 +17,7 @@ exports.extendedKeyboard = [
     ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'CapsLock:2'],
     ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'Spacer', 'Shift:2'],
     ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '-', '_', '+'],
-    ['@', 'SpaceBar:7', '#', 'com:2', 'br'],
+    ['Spacer', '@', 'SpaceBar:7', '#', 'Spacer:2'],
 ];
 exports.extendedNordicKeyboard = [
     ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', 'Backspace:2'],
@@ -50,16 +50,17 @@ exports.specialKeys = [
     'br',
 ];
 exports.specialKeyIcons = {
-    Enter: 'keyboard_return',
-    Backspace: 'backspace',
-    Escape: 'close',
-    SpaceBar: 'space_bar',
-    Shift: 'keyboard_capslock'
+    Enter: 'Enter',
+    Backspace: 'DEL',
+    Escape: 'X',
+    SpaceBar: '',
+    Shift: 'Shift',
 };
 exports.specialKeyTexts = {
     CapsLock: 'Caps',
     com: '.com',
     br: '.br',
+    Shift: 'Shift'
 };
 exports.notDisabledSpecialKeys = [
     'Enter',

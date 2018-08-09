@@ -57,11 +57,11 @@ export const specialKeys: Array<string> = [
 ];
 
 export const specialKeyIcons = {
-  Enter: 'keyboard_return',
-  Backspace: 'backspace',
-  Escape: 'close',
-  SpaceBar: 'space_bar',
-  Shift: 'keyboard_capslock'
+  Enter: 'Enter',
+  Backspace: 'DEL',
+  Escape: 'X',
+  SpaceBar: '',
+  Shift: 'Shift',
 };
 
 export const specialKeyTexts = {
