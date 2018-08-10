@@ -190,6 +190,7 @@ export class VirtualKeyboardComponent implements OnInit, OnDestroy {
   public keyPress(event: KeyPressInterface): void {
     if (event.special) {
       this.handleSpecialKey(event);
+      this.dispatchEvents(event); 
     } else {
       this.handleNormalKey(event.keyValue);
 
@@ -250,6 +251,7 @@ export class VirtualKeyboardComponent implements OnInit, OnDestroy {
    *  5) SpaceBar
    */
   private handleSpecialKey(event: KeyPressInterface): void {
+    let cv = '';
     switch (event.keyValue) {
       case 'Enter':
         this.close();
@@ -289,10 +291,14 @@ export class VirtualKeyboardComponent implements OnInit, OnDestroy {
         this.handleNormalKey(' ');
         break;
       case 'com':
-        this.handleNormalKey('.com');
+        this.inputElement.nativeElement.value += '.com';
+        cv = this.inputElement.nativeElement.value;
+        this.virtualKeyboardService.setCaretPosition(cv.length);
         break;
       case 'br':
-        this.handleNormalKey('.br');
+        this.inputElement.nativeElement.value += '.br';
+        cv = this.inputElement.nativeElement.value;
+        this.virtualKeyboardService.setCaretPosition(cv.length);
         break;
     }
   }

@@ -154,12 +154,16 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
         fxFlex
       >
         <mat-input-container>
-          <input value="" placeholder="Keyboard with custom layout"
-              matInput
-              ng-virtual-keyboard
-              [ng-virtual-keyboard-layout]="customLayout"
+          <input value="" 
+            placeholder="Keyboard with custom layout"
+            matInput
+            ng-virtual-keyboard
+            [ng-virtual-keyboard-layout]="customLayout"
+            [(ngModel)]="test" 
+            [ngModelOptions]="{standalone: true}"
           />
         </mat-input-container>
+        result: {{ test }}
       </div>
     </div>
 

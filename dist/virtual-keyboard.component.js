@@ -101,6 +101,7 @@ var VirtualKeyboardComponent = /** @class */ (function () {
     VirtualKeyboardComponent.prototype.keyPress = function (event) {
         if (event.special) {
             this.handleSpecialKey(event);
+            this.dispatchEvents(event);
         }
         else {
             this.handleNormalKey(event.keyValue);
@@ -153,6 +154,7 @@ var VirtualKeyboardComponent = /** @class */ (function () {
      *  5) SpaceBar
      */
     VirtualKeyboardComponent.prototype.handleSpecialKey = function (event) {
+        var cv = '';
         switch (event.keyValue) {
             case 'Enter':
                 this.close();
@@ -189,10 +191,14 @@ var VirtualKeyboardComponent = /** @class */ (function () {
                 this.handleNormalKey(' ');
                 break;
             case 'com':
-                this.handleNormalKey('.com');
+                this.inputElement.nativeElement.value += '.com';
+                cv = this.inputElement.nativeElement.value;
+                this.virtualKeyboardService.setCaretPosition(cv.length);
                 break;
             case 'br':
-                this.handleNormalKey('.br');
+                this.inputElement.nativeElement.value += '.br';
+                cv = this.inputElement.nativeElement.value;
+                this.virtualKeyboardService.setCaretPosition(cv.length);
                 break;
         }
     };

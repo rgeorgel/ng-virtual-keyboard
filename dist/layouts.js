@@ -60,7 +60,6 @@ exports.specialKeyTexts = {
     CapsLock: 'Caps',
     com: '.com',
     br: '.br',
-    Shift: 'Shift'
 };
 exports.notDisabledSpecialKeys = [
     'Enter',
